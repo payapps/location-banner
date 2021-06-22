@@ -1,40 +1,13 @@
 import './dropdown.css'
+import { createFragmentElements, state, sortObject } from '../../utils'
 
 export const dropDown = ({ data, initialKey = "au" }) => {
-  const state = (initial) => {
-    const s = {
-      prev: null,
-      next: initial
-    };
-    const setState = (args) => {
-      s.prev = s.next;
-      s.next = args;
-    };
-    const getPrevState = () => s.prev;
-    const getState = () => s.next;
-    return [getState, setState, getPrevState];
-  };
-
-  const objectSorter = (obj) => {
-    return (selected) => {
-      const { [selected]: _, ...rest } = obj;
-      return { [selected]: { ...obj[selected] }, ...rest };
-    };
-  };
-
-  const optionsSort = objectSorter(data);
+  const optionsSort = sortObject(data);
 
   const [getOpenState, setOpenState] = state(false);
   const [getOptions, setOptions] = state(optionsSort(initialKey));
   const [getSelected, setSelected, getPrevSelected] = state(initialKey);
 
-  const createFragmentElement = (elementType) =>
-    document
-      .createDocumentFragment()
-      .appendChild(document.createElement(elementType));
-
-  const createFragmentElements = (elementArr) =>
-    elementArr.map((elm) => createFragmentElement(elm));
   const [
     regionSelector,
     regionSelectorDropdown,

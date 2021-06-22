@@ -1,0 +1,17 @@
+.pa-location-banner {
+  background-color: #13212c;
+}
+
+.pa-location-banner__inner {
+  display: grid;
+  grid-template-columns: 1fr 36%;
+  width: 100%;
+  max-width: 1072px;
+  margin: 0 auto;
+}
+
+.pa-location-banner__inner__right {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+

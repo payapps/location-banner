@@ -1,4 +1,5 @@
 import {dropDown } from './components/dropdown'
+import { header } from './components/header'
 
 const dropDownOptions = {
   uk: {
@@ -16,5 +17,8 @@ const { initRegionSelector } = dropDown({
   initialKey: "au"
 });
 
-document.body.appendChild(initRegionSelector());
+const { headerElement, headerElementInner, headerElementInnerLeft, headerElementInnerRight } = header()
+headerElementInnerRight.appendChild(initRegionSelector())
+
+document.body.prepend(headerElement);
 
