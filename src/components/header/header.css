@@ -1,5 +1,5 @@
 .pa-location-banner {
-  display: none;
+  display: none !important;
   background-color: #13212c;
 }
 
