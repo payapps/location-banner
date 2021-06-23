@@ -1,18 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 .pa-location-banner {
-  display: none !important;
-  background-color: #13212c;
+  position: relative;
+  z-index: 100;
+}
+
+.pa-location-banner,
+.pa-location-banner * {
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .pa-location-banner__inner {
   display: grid;
-  grid-template-columns: 1fr 36%;
+  grid-template-columns: 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 16px;
   width: 100%;
   max-width: 1072px;
   margin: 0 auto;
+  padding: 16px;
+}
+
+.pa-location-banner__inner__left {
+  display: flex;
+  align-items: center;
 }
 
 .pa-location-banner__inner__right {
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-column-gap: 24px;
+}
+
+.pa-location-banner__message {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 610px) {
+  .pa-location-banner__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 922px) {
+  .pa-location-banner__inner {
+    grid-template-columns: 1fr 36%;
+  }
 }
 

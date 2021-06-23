@@ -1,12 +1,18 @@
 import './dropdown.css'
 import { createFragmentElements, state, sortObject } from '../../utils'
 
-export const dropDown = ({ data, initialKey = "au" }) => {
+export const dropDown = ({
+  data,
+  initialKey = "au",
+  getSelected,
+  handleSelection,
+  getPrevSelected
+
+}) => {
   const optionsSort = sortObject(data);
 
   const [getOpenState, setOpenState] = state(false);
   const [getOptions, setOptions] = state(optionsSort(initialKey));
-  const [getSelected, setSelected, getPrevSelected] = state(initialKey);
 
   const [
     regionSelector,
@@ -55,7 +61,7 @@ export const dropDown = ({ data, initialKey = "au" }) => {
   };
 
   const optionClickHandler = ({ target }) => {
-    setSelected(target.id);
+    handleSelection(target.id)
     setOptions(optionsSort(getSelected()));
     renderDropDown(getOptions());
     setOpenState(false);

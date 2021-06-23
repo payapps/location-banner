@@ -1,23 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-.pa-region-selector-list,
-.pa-region-selector-list * {
-  box-sizing: border-box;
-}
-
 .pa-region-selector-list {
   height: 38px;
   width: 100%;
-  max-width: 250px;
   padding: 0;
   margin: 0;
   list-style-type: none;
   background-color: #13212c;
   border: solid #b6c5ce 1px;
   border-radius: 19px;
-  font-family: "Roboto";
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
 }
 
 .pa-region-selector-list > li {

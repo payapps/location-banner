@@ -1,0 +1,15 @@
+.pa-location-banner__cont__btn {
+  display: block;
+  height: 38px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  background: #E2662A;
+  text-decoration: none;
+  border-radius: 19px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+}
+
